@@ -17,14 +17,15 @@
             padding: 20px;
         }
         #message {
-            font-size: min(8vw, 32px); 
+            font-size: min(8vw, 32px);
             font-weight: bold;
             color: #d63384;
-            white-space: pre-line; 
+            white-space: pre-line;
             overflow: hidden;
             border-right: 3px solid #d63384;
             padding-right: 5px;
             max-width: 90%;
+            line-height: 1.4;
             animation: blink 0.8s infinite;
         }
         @keyframes blink {
@@ -40,7 +41,7 @@
 <body>
     <div id="message"></div>
     <script>
-        const text = "Happy Valentine's Day,\nLilyok! 😉"; 
+        const text = "Happy Valentine's Day,\nLilok! 😉";
         let index = 0;
         function typeEffect() {
             if (index < text.length) {
