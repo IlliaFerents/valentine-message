@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Surprise</title>
     <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #ffe0e9;
-        font-family: "Courier New", monospace;
-        margin: 0;
-        text-align: center;
-        padding: 20px;
-      }
-      #message {
-        font-size: 5vw; /* Responsive font size */
-        font-weight: bold;
-        color: #d63384;
-        white-space: nowrap;
-        overflow: hidden;
-        border-right: 3px solid #d63384;
-        padding-right: 5px;
-        animation: blink 0.8s infinite;
-      }
-      @keyframes blink {
-        50% {
-          border-color: transparent;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe0e9;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
         }
-      }
-      @media (max-width: 600px) {
         #message {
-          font-size: 7vw; /* Larger text on smaller screens */
+            font-size: min(8vw, 32px); 
+            font-weight: bold;
+            color: #d63384;
+            white-space: pre-line; 
+            overflow: hidden;
+            border-right: 3px solid #d63384;
+            padding-right: 5px;
+            max-width: 90%;
+            animation: blink 0.8s infinite;
         }
-      }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        @media (max-width: 600px) {
+            #message {
+                font-size: min(10vw, 28px);
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div id="message"></div>
     <script>
-      const text = "Happy Valentine's Day, Lilok! 😉";
-      let index = 0;
-      function typeEffect() {
-        if (index < text.length) {
-          document.getElementById("message").textContent += text[index];
-          index++;
-          setTimeout(typeEffect, 100);
-        } else {
-          document.getElementById("message").style.borderRight = "none";
+        const text = "Happy Valentine's Day,\nLilok! 😉"; 
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("message").textContent += text[index];
+                index++;
+                setTimeout(typeEffect, 100);
+            } else {
+                document.getElementById("message").style.borderRight = "none";
+            }
         }
-      }
-      setTimeout(typeEffect, 1000);
+        setTimeout(typeEffect, 1000);
     </script>
-  </body>
+</body>
 </html>
